@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "compile-wasm": "asc wasm/hello-world.ts -o public/hello-world.wasm"
   },
   "type": "module"
 }

@@ -7,7 +7,7 @@ export function setupCounter(input1, input2, sumDisplayElement) {
   let number2 = 0;
   const setSum = () => {
     const sum = wasmModule.instance.exports.add(number1, number2);
-    sumDisplayElement.innerHTML = `sum is ${sum}`;
+    sumDisplayElement.innerHTML = `wasm sum is ${sum}`;
   };
 
   input1.addEventListener("input", (e) => {
