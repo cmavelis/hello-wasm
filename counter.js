@@ -1,8 +1,12 @@
+import { wasmBrowserInstantiate } from "./wasm-loader.js";
+
+const wasmModule = await wasmBrowserInstantiate("./hello-world.wasm");
+
 export function setupCounter(input1, input2, sumDisplayElement) {
   let number1 = 0;
   let number2 = 0;
   const setSum = () => {
-    const sum = number1 + number2;
+    const sum = wasmModule.instance.exports.add(number1, number2);
     sumDisplayElement.innerHTML = `sum is ${sum}`;
   };
 
